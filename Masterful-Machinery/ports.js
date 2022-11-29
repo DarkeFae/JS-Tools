@@ -33,11 +33,12 @@ function ports(file) {
             var capacity = e[3];
             var size1 = e[3];
             var size2 = e[4];
+            var output = `${size.toLowerCase().replace(" ", '_')}_${mat.toLowerCase()}_${type.toLowerCase()}`
             switch (type.toLowerCase()) {
                 case 'item':
                     //item ports
                     var _itemInput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_item_input",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_item_input",
   "name": {
     "text": "${size} ${mat} Input"
   },
@@ -49,7 +50,7 @@ function ports(file) {
   }
 }`
                     var _itemOutput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_item_input",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_item_input",
   "name": {
     "text": "${size} ${mat} Input"
   },
@@ -61,13 +62,13 @@ function ports(file) {
   }
 }`
 
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_input.json`, _itemInput);
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_output.json`, _itemOutput);
+                    await fsp.writeFile(`output/${output}_input.json`, _itemInput);
+                    await fsp.writeFile(`output/${output}_output.json`, _itemOutput);
                     break;
                 case 'fluid':
                     //fluid ports
                     var _fluidInput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_fluid_input",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_fluid_input",
   "name": {
     "text": "${size} ${mat} Fluid Input"
   },
@@ -78,7 +79,7 @@ function ports(file) {
   }
 }`
                     var _fluidOutput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_fluid_output",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_fluid_output",
   "name": {
     "text": "${size} ${mat} Fluid Output"
   },
@@ -89,13 +90,13 @@ function ports(file) {
   }
 }`
 
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_input.json`, _fluidInput,);
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_output.json`, _fluidOutput);
+                    await fsp.writeFile(`output/${output}_input.json`, _fluidInput,);
+                    await fsp.writeFile(`output/${output}_output.json`, _fluidOutput);
                     break;
                 case 'energy':
                     //energy ports
                     var _energyInput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_energy_input",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_energy_input",
   "name": {
     "text": "${size} ${mat} Energy Input"
   },
@@ -106,7 +107,7 @@ function ports(file) {
   }
 }`
                     var _energyOutput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_energy_output",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_energy_output",
   "name": {
     "text": "${size} ${mat} Energy Output"
   },
@@ -117,8 +118,8 @@ function ports(file) {
   }
 }`
 
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_input.json`, _energyInput,);
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_output.json`, _energyOutput);
+                    await fsp.writeFile(`output/${output}_input.json`, _energyInput,);
+                    await fsp.writeFile(`output/${output}_output.json`, _energyOutput);
                     break;
                 case 'rotation':
                     //rotation ports
@@ -145,13 +146,13 @@ function ports(file) {
   }
 }`
 
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_input.json`, _rotInput,);
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_output.json`, _rotOutput);
+                    await fsp.writeFile(`output/${output}_input.json`, _rotInput,);
+                    await fsp.writeFile(`output/${output}_output.json`, _rotOutput);
                     break;
                 case "mek_gas":
                     //mek_gas ports
                     var _gasInput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_mek_gas_input",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_gas_input",
   "name": {
     "text": "${size} ${mat} Gas Input"
   },
@@ -162,7 +163,7 @@ function ports(file) {
   }
 }`
                     var _gasOutput = `{
-  "id": "${size.toLowerCase()}_${mat.toLowerCase()}_mek_gas_output",
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_gas_output",
   "name": {
     "text": "${size} ${mat} Gas Output"
   },
@@ -173,8 +174,8 @@ function ports(file) {
   }
 }`
 
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_input.json`, _gasInput,);
-                    await fsp.writeFile(`output/${size}_${mat}_${type}_output.json`, _gasOutput);
+                    await fsp.writeFile(`output/${output}_input.json`, _gasInput,);
+                    await fsp.writeFile(`output/${output}_output.json`, _gasOutput);
                     break;
                 default:
                     console.error(`Unknown Port Type: ${e[2]}`);
