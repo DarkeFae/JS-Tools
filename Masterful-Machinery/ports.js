@@ -2,6 +2,7 @@
 const { readFile, writeFile, fstat } = require('fs')
 const fsp = require('fs/promises')
 
+
 const _file = process.argv[2]
 const _example = `DELETE THIS DATA BEFORE RUNNING AGAIN
 
@@ -21,11 +22,11 @@ function ports(file) {
             process.exit(1);
         }
         //arrays input to multi level array 
-        var _array = data.toString().replace(/: /gi, ':').split('\r\n');
+        var _array = data.toString().replace(/: /gi, ':').replace(/\r\n/, '\n').split('\n');
         for (var i = 0; i < _array.length; i++) {
-            _array[i] = _array[i].split(":");
+             _array[i] = _array[i].split(":");
         }
-        //console.log(_array)
+        console.log(_array)
         _array.forEach(async e => {
             var size = e[0];
             var mat = e[1];
