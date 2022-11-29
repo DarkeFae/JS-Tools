@@ -8,10 +8,6 @@ const _example = `DELETE THIS DATA BEFORE RUNNING AGAIN
 Please enter your data in the following format
 Size:Material:Type:Capacity/Rows/Stress:Columns for Item(Optional)
 --------------------------------------------`
-////////////////////////////////
-//Examples for Input
-//Brass:Item
-//Brass:Fluid
 
 
 function ports(file) {
