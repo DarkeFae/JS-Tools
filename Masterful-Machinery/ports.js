@@ -1,5 +1,5 @@
 //libraries to include
-const { readFile, writeFile, fstat } = require('fs')
+const { readFile, mkdirSync, existsSync } = require('fs')
 const fsp = require('fs/promises')
 
 
@@ -9,6 +9,11 @@ const _example = `DELETE THIS DATA BEFORE RUNNING AGAIN
 Please enter your data in the following format
 Size:Material:Type:Capacity/Rows/Stress:Columns for Item(Optional)
 --------------------------------------------`
+
+var dir = __dirname + '/output';
+if (!existsSync(dir)) {
+  mkdirSync(dir, 0744);
+}
 
 
 function ports(file) {
