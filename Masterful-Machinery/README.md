@@ -34,3 +34,5 @@ for example: `Large:Brass:Rotation:30` is a Create Rotation Port with the name L
 Size:Material:Mek_Gas:Amount
 
 for example: `Large:Brass:Mek_Gas:100` is a Mekanism Gas Port with the name Large Brass Gas Port and an Tank size of 100mB.
+
+###### Information on this page is subject to change with mod updates
