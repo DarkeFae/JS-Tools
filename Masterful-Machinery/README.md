@@ -10,6 +10,12 @@ This will automatically generate the both input and output port files in a subfo
 ## Ports Layout:
 Most of the variables will be the same between port types with only the 4th and 5th sections having much differnce.
 
+the basic file layout is 
+
+    Port:Number:One:Of:Many
+    Port:Number:Two:Of:Many
+    And:So:It:Goes:On
+
 ## Items:
 Size:Material:Item:Rows:Columns
 
