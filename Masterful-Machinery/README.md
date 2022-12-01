@@ -47,7 +47,6 @@ Mek_Laser:Material
 for example: `Mek_Laser:Brass` is a Mekanism Laser Input with the name Brass Laser Port.<br>
 <mark style= "background-color: #403A39"> Note that Mekanism Lasers are input only so only the input will be generated. </mark>
 
-# TODO
 ## Mekanism_Heat
 Mek_Heat:Size:Material:Amount
 

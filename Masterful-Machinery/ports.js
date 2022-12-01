@@ -206,18 +206,118 @@ function ports(file) {
 
                 case "mek_heat":
                   //Mekanism Heat
+                  var _heatInput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_heat_input",
+  "name": {
+    "text": "${size} ${mat} Heat Input"
+  },
+  "port": "mm:mekanism_heat",
+  "input": true,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+                  var _heatOutput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_heat_output",
+  "name": {
+    "text": "${size} ${mat} Heat Output"
+  },
+  "port": "mm:mekanism_heat",
+  "input": false,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+
+                    await fsp.writeFile(`output/${output}_input.json`, _heatInput,);
+                    await fsp.writeFile(`output/${output}_output.json`, _heatOutput);
                 break;
 
                 case "mek_infuse":
                 //Mekanism Infuse
+                var _infuseInput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_infuse_input",
+  "name": {
+    "text": "${size} ${mat} Infuse Input"Heat
+  },
+  "port": "mm:mekanism_infuse",
+  "input": true,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+                var _infuseOutput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_infuse_output",
+  "name": {
+    "text": "${size} ${mat} Infuse Output"
+  },
+  "port": "mm:mekanism_infuse",
+  "input": false,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+                
+                await fsp.writeFile(`output/${output}_input.json`, _infuseInput,);
+                await fsp.writeFile(`output/${output}_output.json`, _infuseOutput);
                 break;
 
                 case "mek_pigment":
                   //Mekanism Pigment
+                  var _pigmentInput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_pigment_input",
+  "name": {
+    "text": "${size} ${mat} Pigment Input"
+  },
+  "port": "mm:mekanism_pigment",
+  "input": true,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+                  var _pigmentOutput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_pigment_output",
+  "name": {
+    "text": "${size} ${mat} Pigment Output"
+  },
+  "port": "mm:mekanism_pigment",
+  "input": false,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+                                  
+                  await fsp.writeFile(`output/${output}_input.json`, _pigmentInput,);
+                  await fsp.writeFile(`output/${output}_output.json`, _pigmentOutput);
                 break;
 
                 case "mek_slurry":
                   //Mekanism Slurry
+                  var _slurryInput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_slurry_input",
+  "name": {
+    "text": "${size} ${mat} Slurry Input"
+  },
+  "port": "mm:mekanism_slurry",
+  "input": true,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+                  var _slurryOutput = `{
+  "id": "${size.toLowerCase().replace(" ", "_")}_${mat.toLowerCase()}_mek_slurry_output",
+  "name": {
+    "text": "${size} ${mat} Slurry Output"
+  },
+  "port": "mm:mekanism_slurry",
+  "input": false,
+  "config": {
+    "capacity": ${capacity}
+  }
+}`
+                                  
+                  await fsp.writeFile(`output/${output}_input.json`, _slurryInput,);
+                  await fsp.writeFile(`output/${output}_output.json`, _slurryOutput);
                 break;
                 default:
                     console.error(`Unknown Port Type: ${e[0]}`);
