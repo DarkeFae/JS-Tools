@@ -17,28 +17,55 @@ the basic file layout is
     And:So:It:Goes:On
 
 ## Items:
-Size:Material:Item:Rows:Columns
+Item:Size:Material:Rows:Columns
 
-for example: `Large:Brass:Item:3:3` is a Item Port with the name Large Brass Item Port and an inventory size of 3x3.
+for example: `Item:Large:Brass:3:3` is a Item Port with the name Large Brass Item Port and an inventory size of 3x3.
 
 ## Fluids:
-Size:Material:Fluid:Amount
+Fluid:Size:Material:Amount
 
-for example: `Large:Brass:Fluid:1000` is a Fluid Port with the name Large Brass Fluid Port and an Tank size of 1000mB or 1 Bucket.
+for example: `Fluid:Large:Brass:1000` is a Fluid Port with the name Large Brass Fluid Port and an Tank size of 1000mB or 1 Bucket.
 
 ## Energy:
-Size:Material:Energy:Amount
+Energy:Size:Material:Amount
 
-for example: `Large:Brass:Energy:256` is a Energy Port with the name Large Brass Energy Port and an Battery size of 256FE.
+for example: `Energy:Large:Brass:256` is a Energy Port with the name Large Brass Energy Port and an Battery size of 256FE.
 
 ## Create Rotation:
-Size:Material:Rotation:Stress
+Rotation:Size:Material:Stress
 
-for example: `Large:Brass:Rotation:30` is a Create Rotation Port with the name Large Brass Rotation Port and an Stress Capacity of 30 SU
+for example: `Rotation:Large:Brass:30` is a Create Rotation Port with the name Large Brass Rotation Port and an Stress Capacity of 30 SU
 
 ## Mekanism Gas:
-Size:Material:Mek_Gas:Amount
+Mek_Gas:Size:Material:Amount
 
-for example: `Large:Brass:Mek_Gas:100` is a Mekanism Gas Port with the name Large Brass Gas Port and an Tank size of 100mB.
+for example: `Mek_Gas:Large:Brass:100` is a Mekanism Gas Port with the name Large Brass Gas Port and an Tank size of 100mB.
+
+## Mekanism Laser
+Mek_Laser:Material
+
+for example: `Mek_Laser:Brass` is a Mekanism Laser Input with the name Brass Laser Port.<br>
+<mark style= "background-color: #403A39"> Note that Mekanism Lasers are input only so only the input will be generated. </mark>
+
+# TODO
+## Mekanism_Heat
+Mek_Heat:Size:Material:Amount
+
+for example: `Mek_Heat:Large:Brass:100` is a Mekanism Heat Port with the name Large Brass Heat Port and an Tank size of 100mB.
+
+## Mekanism_Infuse Type
+Mek_Infuse:Size:Material:Amount
+
+for example: `Mek_Infuse:Large:Brass:100` is a Mekanism Infuse Port with the name Large Brass Infuse Port and an Tank size of 100mB.
+
+## Mekanism_Pigment
+Mek_Pigment:Size:Material:Amount
+
+for example: `Mek_Pigment:Large:Brass:100` is a Mekanism Pigment Port with the name Large Brass Pigment Port and an Tank size of 100mB.
+
+## Mekanism_Slurry
+Mek_Slurry:Size:Material:Amount
+
+for example: `Mek_Slurry:Large:Brass:100` is a Mekanism Slurry Port with the name Large Brass Slurry Port and an Tank size of 100mB.
 
 ###### Information on this page is subject to change with mod updates

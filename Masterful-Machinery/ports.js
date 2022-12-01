@@ -7,7 +7,7 @@ const _file = process.argv[2]
 const _example = `DELETE THIS DATA BEFORE RUNNING AGAIN
 
 Please enter your data in the following format
-Size:Material:Type:Capacity/Rows/Stress:Columns for Item(Optional)
+Type:Size:Material:Capacity/Rows/Stress:Columns for Item(Optional)
 --------------------------------------------`
 
 var dir = __dirname + '/output';
@@ -33,9 +33,9 @@ function ports(file) {
         }
         console.log(_array)
         _array.forEach(async e => {
-            var size = e[0];
-            var mat = e[1];
-            var type = e[2];
+            var size = e[1];
+            var mat = e[2];
+            var type = e[0];
             var capacity = e[3];
             var size1 = e[3];
             var size2 = e[4];
@@ -71,6 +71,7 @@ function ports(file) {
                     await fsp.writeFile(`output/${output}_input.json`, _itemInput);
                     await fsp.writeFile(`output/${output}_output.json`, _itemOutput);
                     break;
+
                 case 'fluid':
                     //fluid ports
                     var _fluidInput = `{
@@ -99,6 +100,7 @@ function ports(file) {
                     await fsp.writeFile(`output/${output}_input.json`, _fluidInput,);
                     await fsp.writeFile(`output/${output}_output.json`, _fluidOutput);
                     break;
+
                 case 'energy':
                     //energy ports
                     var _energyInput = `{
@@ -127,6 +129,7 @@ function ports(file) {
                     await fsp.writeFile(`output/${output}_input.json`, _energyInput,);
                     await fsp.writeFile(`output/${output}_output.json`, _energyOutput);
                     break;
+
                 case 'rotation':
                     //rotation ports
                     var _rotInput = `{
@@ -155,6 +158,7 @@ function ports(file) {
                     await fsp.writeFile(`output/${output}_input.json`, _rotInput,);
                     await fsp.writeFile(`output/${output}_output.json`, _rotOutput);
                     break;
+
                 case "mek_gas":
                     //mek_gas ports
                     var _gasInput = `{
@@ -183,8 +187,40 @@ function ports(file) {
                     await fsp.writeFile(`output/${output}_input.json`, _gasInput,);
                     await fsp.writeFile(`output/${output}_output.json`, _gasOutput);
                     break;
+
+                case "mek_laser":
+                //Mekanism Laser Input Only
+                var _laserInput = `{
+  "id": "${mat.toLowerCase()}_mek_laser",
+  "name": {
+    "text": "${mat} Laser Port"
+  },
+  "port": "mm:mekanism_laser",
+  "input": true,
+  "config": {
+  }
+}`
+
+                await fsp.writeFile(`output/${mat}_laser_port.json`, _laserInput,);
+                break;
+
+                case "mek_heat":
+                  //Mekanism Heat
+                break;
+
+                case "mek_infuse":
+                //Mekanism Infuse
+                break;
+
+                case "mek_pigment":
+                  //Mekanism Pigment
+                break;
+
+                case "mek_slurry":
+                  //Mekanism Slurry
+                break;
                 default:
-                    console.error(`Unknown Port Type: ${e[2]}`);
+                    console.error(`Unknown Port Type: ${e[0]}`);
                     break;
             }
         })
