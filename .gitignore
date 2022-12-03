@@ -105,3 +105,5 @@ dist
 
 output/
 *.txt
+Masterful-Machinery/ports refactor.js
+.gitignore
